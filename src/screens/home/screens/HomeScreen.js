@@ -56,8 +56,8 @@ export default function HomeScreen() {
                         </Text>
                     </View>
                     <View style={styles.end}>
-                        <Text style={styles.longTitle}>
-                            This product is ve...
+                        <Text style={styles.longTitle} numberOfLines={1}>
+                            This product is very good
                         </Text>
                         <View style={{
                             flexDirection: 'row',
@@ -89,7 +89,7 @@ export default function HomeScreen() {
                         <Image 
                             style={styles.productImage}
                             source={{
-                            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjWMzSYorIgi_U9JKqTiNu9MNsAW32qTzDW4-VLwqVvLkoOZvWQusLt3Ytji-P66DQXo&usqp=CAU'
+                            uri: 'https://www.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw1b954d36/images/hi-res/50655_GRBN.jpg?sw=768&sh=768&sfrm=png&q=95&bgcolor=f5f5f5'
                         }}>
                         </Image>
                         <View style={styles.newTag}>
@@ -102,7 +102,7 @@ export default function HomeScreen() {
                     <View style={styles.content}>
                         <View style={styles.text}>
                             <Text style={styles.productName}>
-                                Sweater 1
+                                Sweater 2
                             </Text>
                             <Image style={styles.likeProduct} source={{
                                 uri: 'https://lms.ithillel.ua/uploads/images/2684e2280f5c8f1be44a5add6ef03a9e.png'
@@ -118,8 +118,8 @@ export default function HomeScreen() {
                             </Text>
                         </View>
                         <View style={styles.end}>
-                            <Text style={styles.longTitle}>
-                                This product is ve...
+                            <Text style={styles.longTitle}  numberOfLines={1}>
+                                This product is very good.
                             </Text>
                             <View style={{
                                 flexDirection: 'row',
@@ -213,10 +213,14 @@ const styles = StyleSheet.create({
     end: {
         width: '100%',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        overflow: 'hidden'
     },
     longTitle: {
-        fontSize: 17
+        width: 140,
+        fontSize: 17,
+        overflow: 'hidden',
+        whiteSpace: 'nowrap'
     },
     buyProduct: {
         fontSize: 17,
