@@ -3,32 +3,20 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput,
-    TouchableOpacity,
     Image,
 } from 'react-native';
 
 export default function HomeScreen() {
     return (
-        <View style={{
-            width: '100%'
-        }}>
-            <View style={{
-                width: '100%',
-                alignItems: 'center'
-            }}>
+        <View style={styles.mainBlock}>`
+            <View style={styles.main}>
             <View style={styles.photo}>
-                <View style={{
-                    width: '150px',
-                    height: '110px',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
+                <View style={styles.mainPhoto}>
                     <Image 
                         style={styles.productImage}
-                        source={{
-                        uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjWMzSYorIgi_U9JKqTiNu9MNsAW32qTzDW4-VLwqVvLkoOZvWQusLt3Ytji-P66DQXo&usqp=CAU'
-                    }}>
+                        source={
+                            require('~/assets/images/product_photo.png')
+                        }>
                     </Image>
                     <View style={styles.newTag}>
                         <Text style={{
@@ -42,9 +30,9 @@ export default function HomeScreen() {
                         <Text style={styles.productName}>
                             Sweater 1
                         </Text>
-                        <Image style={styles.likeProduct} source={{
-                            uri: 'https://lms.ithillel.ua/uploads/images/2684e2280f5c8f1be44a5add6ef03a9e.png'
-                        }}>
+                        <Image style={styles.likeProduct} source={
+                            require('~/assets/images/heart-image.png')
+                        }>
                         </Image>
                     </View>
                     <View style={styles.price}>
@@ -65,9 +53,9 @@ export default function HomeScreen() {
                             <Text style={styles.buyProduct}>
                                 Buy
                             </Text>
-                            <Image style={styles.buyImage} source={{
-                                uri: 'https://lms.ithillel.ua/uploads/images/8f09cf7cc7a81733bf96e2c1e63b71f7.png'
-                            }}>
+                            <Image style={styles.buyImage} source={
+                                require('~/assets/images/buy.png')
+                            }>
                                 
                             </Image>
                         </View>
@@ -75,22 +63,14 @@ export default function HomeScreen() {
                 </View>
             </View>
             </View>
-            <View style={{
-                width: '100%',
-                alignItems: 'center'
-            }}>
+            <View style={styles.main}>
                 <View style={styles.photo}>
-                    <View style={{
-                        width: '150px',
-                        height: '110px',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
+                    <View style={styles.mainPhoto}>
                         <Image 
                             style={styles.productImage}
-                            source={{
-                            uri: 'https://www.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw1b954d36/images/hi-res/50655_GRBN.jpg?sw=768&sh=768&sfrm=png&q=95&bgcolor=f5f5f5'
-                        }}>
+                            source={
+                                require('~/assets/images/product_photo_2.png')
+                            }>
                         </Image>
                         <View style={styles.newTag}>
                             <Text style={{
@@ -142,21 +122,37 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+    mainBlock: {
+        width: '100%'
+    },
+    mainPhoto: {
+        width: 150,
+        height: 110,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     photo: {
         // flex: 1,
         alignItems: 'center',
         width: '90%',
-        height: '140px',
-        borderRadius: '15px',
+        height: 140,
+        borderRadius: 15,
         borderWidth: 1,
         borderColor: 'gray',
         flexDirection: 'row',
-        marginTop: 20
+        marginTop: 20,
+        shadowColor: '#000',
+        shadowOpacity: 0.5,
+        shadowRadius: 3.84,
         // flexDirection: 'row'
     },
+    main: {
+        width: '100%',
+        alignItems: 'center'
+    },
     productImage: {
-        width: '90px',
-        height: '90px',
+        width: 90,
+        height: 90,
         borderWidth: 1,
         borderColor: 'gray',
         resizeMode: 'contain',
@@ -174,11 +170,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderColor: 'gray',
         borderWidth: '1px',
-        backgroundColor: '#a0a0a0'
     },
     content: {
-        width: '234px',
-        height: '100px',
+        width: 234,
+        height: 100,
         justifyContent: 'space-between'
     },
     text: {
@@ -193,8 +188,8 @@ const styles = StyleSheet.create({
         fontSize: 17
     },  
     likeProduct: {
-        width: '30px',
-        height: '30px'
+        width: 30,
+        height: 30
     },
     price: {
         width: '100%',
@@ -227,8 +222,8 @@ const styles = StyleSheet.create({
         marginRight: 3
     },
     buyImage: {
-        width: '20px',
-        height: '20px',
+        width: 20,
+        height: 20,
         marginRight: 25
     }
 })
